@@ -17,8 +17,7 @@ messages.addEventListener("submit", async function(event) {
     const response = await fetch("https://corsproxy.io/?url=https://wcln-ai.twostoryapps.com/letschat&key=🍪🍪🍪🍪",
         {
             headers: {
-                "content-type": "application/json",
-                host: "wcln-ai.twostoryapps.com"
+                "content-type": "application/json"
             },
             method: "POST",
             body: JSON.stringify({messages: arr})
