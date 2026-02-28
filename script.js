@@ -25,6 +25,7 @@ messages.addEventListener("submit", async function(event) {
     );
     try {
         const json = await response.json();
+        document.querySelector("#model").innerText = `The current model is: ${json.data.model}`;
         if (json.success) {
             messages.assistant.value = json?.data?.choices[0]?.message?.content;
             messages.assistant.placeholder = "If you see this, the AI returned a blank response";
