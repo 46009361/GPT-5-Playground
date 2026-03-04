@@ -3,7 +3,7 @@ messages.addEventListener("submit", async function(event) {
     event.preventDefault();
     const s = document.querySelector("#s");
     s.disabled = true;
-    s.innerText = "▶️ Running…";
+    s.innerText = "▶ Running…";
     const arr = [];
     Array.from(messages).forEach(element => {
         if (!element.disabled && element.name) {
@@ -37,7 +37,7 @@ messages.addEventListener("submit", async function(event) {
         alert(error);
     }
     finally {
-        s.innerText = "▶️ Run";
+        s.innerText = "▶ Run";
         s.disabled = false;
         return true;
     }

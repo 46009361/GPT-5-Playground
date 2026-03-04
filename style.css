@@ -12,6 +12,7 @@ form {
 }
 
 textarea {
+    font-family: inherit;
     field-sizing: content;
     min-height: calc(100vh - 30px);
     width: calc(30vw - 30px);
