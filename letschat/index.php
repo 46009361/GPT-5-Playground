@@ -16,7 +16,7 @@ curl_setopt_array($ch, [
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_POST => true,
     CURLOPT_HTTPHEADER => [
-        "Authorization: Bearer $HACKCLUB_AI_API_KEY";
+        "Authorization: Bearer $HACKCLUB_AI_API_KEY",
         'Content-Type: application/json'
     ],
     CURLOPT_POSTFIELDS => $rawBody,
