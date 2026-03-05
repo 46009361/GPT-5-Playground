@@ -15,19 +15,19 @@ messages.addEventListener("submit", async function(event) {
             arr.push(obj);
         }
     });
-    // let's deplete my school's resources!
-    const response = await fetch("https://corsproxy.io/?url=https://wcln-ai.twostoryapps.com/letschat&key=🍪🍪🍪🍪",
+    const response = await fetch("/letschat/",
         {
             headers: {
                 "content-type": "application/json"
             },
             method: "POST",
-            body: JSON.stringify({messages: arr})
+            body: JSON.stringify({model: "openai/gpt-5-mini-2025-08-07", messages: arr})
         }
     );
     try {
         const json = await response.json();
-        document.querySelector("#model").innerText = `The current model is: ${json.data.model}`;
+        // in case a future model has a name with two slashes
+        document.querySelector("#model").innerText = `The current model is: ${json.data.model.split(/\//)[1]}`;
         if (json.success) {
             messages.assistant.value = json?.data?.choices[0]?.message?.content;
             messages.assistant.placeholder = "If you see this, the AI returned a blank response";
